@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronantara Galeri Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #5d4666; /* Warna ungu khas Ronantara */
+            --bg-light: #f3f0f5;
+        }
+        body {
+            background-color: var(--bg-light);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+        .navbar .nav-link, .navbar .navbar-brand {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        .navbar .nav-link.active {
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+        .btn-primary-custom:hover {
+            background-color: #4a3752;
+            color: white;
+        }
+        .btn-outline-custom {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+        .btn-outline-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-filter {
+            background-color: #e5e0eb;
+            color: #555;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: none;
+        }
+        .btn-filter.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .card-art {
+            border: none;
+            border-radius: 0;
+            background: white;
+        }
+        .card-art img {
+            border-radius: 0;
+            background-color: #111;
+            object-fit: cover;
+        }
+        .badge-category {
+            background-color: #f0ebf3;
+            color: #8a7693;
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .profile-avatar {
+            width: 130px;
+            height: 130px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            background-color: #fdfbfe;
+        }
+        .upload-drag-area {
+            border: 2px dashed #a094a6;
+            background-color: transparent;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark py-3 shadow-sm mb-5">
+        <div class="container px-4">
+            <a class="navbar-brand fs-4 fw-bold me-5" href="#">Ronantara</a>
+            <button class="navbar-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Eksplorasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Unggah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Profil</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 text-white">
+                    <i class="bi bi-bell fs-5 cursor-pointer"></i>
+                    <i class="bi bi-gear fs-5 cursor-pointer"></i>
+                    <div class="rounded-circle bg-secondary" style="width: 32px; height: 32px; background: url('https://via.placeholder.com/32') no-repeat center/cover;"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container px-4 mb-5">
+        <h1 class="fw-bold mb-4">Koleksi Terkurasi.</h1>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="input-group bg-white rounded shadow-sm border-0 py-1 px-2">
+                    <span class="input-group-text bg-transparent border-0 text-muted"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control bg-transparent border-0" placeholder="Cari karya, seniman, atau kategori...">
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mb-4">
+            <button class="btn btn-filter active">SEMUA</button>
+            <button class="btn btn-filter">DIGITAL</button>
+            <button class="btn btn-filter">LUKISAN</button>
+            <button class="btn btn-filter">FOTOGRAFI</button>
+            <button class="btn btn-filter">INSTALASI</button>
+        </div>
+
+        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x450/222222/ffffff?text=Fluida+Hitam" class="card-img-top" height="380" alt="Fluida Hitam">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold m-0">Fluida Hitam No. 1</h5>
+                            <span class="badge badge-category">Digital</span>
+                        </div>
+                        <p class="text-muted small">Caption: Eksplorasi viskositas dalam ruang hampa digital...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x450/eeeeee/000000?text=Garis+Sunyi" class="card-img-top" height="380" alt="Garis Sunyi">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold m-0">Garis Sunyi</h5>
+                            <span class="badge badge-category">Lukisan</span>
+                        </div>
+                        <p class="text-muted small">Caption: Kesederhanaan dalam satu tarikan nafas...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x450/111111/ffffff?text=Arsitektur+Jiwa" class="card-img-top" height="380" alt="Arsitektur Jiwa">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold m-0">Arsitektur Jiwa</h5>
+                            <span class="badge badge-category">Fotografi</span>
+                        </div>
+                        <p class="text-muted small">Caption: Struktur yang berbicara dalam keheningan warna...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x450/333333/ffffff?text=Partikel+Waktu" class="card-img-top" height="380" alt="Partikel Waktu">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold m-0">Partikel Waktu</h5>
+                            <span class="badge badge-category">Instalasi</span>
+                        </div>
+                        <p class="text-muted small">Caption: Visualisasi dari detik-detik yang terfragmentasi...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x250/444444/ffffff?text=Horizon+Kelabu" class="card-img-top" height="380" alt="Horizon Kelabu">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold m-0">Horizon Kelabu</h5>
+                            <span class="badge badge-category">Digital</span>
+                        </div>
+                        <p class="text-muted small">Caption: Di mana batas antara nyata dan maya memudar...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center my-5">
+            <button class="btn btn-outline-custom px-4 py-2 uppercase font-monospace btn-sm">EKSPLORASI LEBIH LANJUT</button>
+        </div>
+    </div>
+
+    <hr class="container my-5 opacity-25">
+
+    <div class="container px-4 mb-5">
+        <div class="row align-items-start mb-4">
+            <div class="col-auto">
+                <div class="profile-avatar"></div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="fw-bold m-0">Anindya Putri</h2>
+                    <button class="btn btn-outline-secondary btn-sm px-3 uppercase text-dark border-secondary-subtle" style="font-size: 0.75rem;">EDIT PROFIL</button>
+                </div>
+                <p class="text-muted col-lg-7 px-0 leading-relaxed">
+                    Kurator visual dan seniman digital yang berbasis di Jakarta. Menjelajahi persimpangan antara geometri minimalis dan emosi manusia melalui media digital. Karya saya adalah pencarian akan keheningan di tengah kebisingan informasi.
+                </p>
+                <div class="d-flex gap-2 mt-2">
+                    <span class="badge bg-secondary-subtle text-secondary px-2 py-1" style="font-size: 0.65rem;">DIGITAL ART</span>
+                    <span class="badge bg-secondary-subtle text-secondary px-2 py-1" style="font-size: 0.65rem;">MINIMALISM</span>
+                    <span class="badge bg-secondary-subtle text-secondary px-2 py-1" style="font-size: 0.65rem;">ARCHIVAL</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4 opacity-25">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="fw-bold m-0">Unggahan</h4>
+            <div class="text-muted">
+                <i class="bi bi-grid-3x3-gap-fill me-2 fs-5 text-dark"></i>
+                <i class="bi bi-list fs-4"></i>
+            </div>
+        </div>
+
+        <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x400/2a2a2a/ffffff?text=Hening" class="card-img-top" height="300" alt="Hening">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-1">Hening di Tengah Kota</h5>
+                        <p class="text-muted small mb-0 italic">Eksplorasi isolasi urban melalui bentuk-bentuk kotak yang kaku namun puitis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x400/666666/ffffff?text=Titik+Balik" class="card-img-top" height="300" alt="Titik Balik">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-1">Titik Balik</h5>
+                        <p class="text-muted small mb-0">Studi tentang kesederhanaan absolut sebagai bentuk perlawanan terhadap kompleksitas dunia...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x400/444444/ffffff?text=Arsitektur+Mimpi" class="card-img-top" height="300" alt="Arsitektur Mimpi">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-1">Arsitektur Mimpi</h5>
+                        <p class="text-muted small mb-0">Rekonstruksi ruang-ruang yang kita kunjungi saat tertidur, kaku namun akrab.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x400/151515/ffffff?text=Fraktal+Memori" class="card-img-top" height="300" alt="Fraktal Memori">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-1">Fraktal Memori</h5>
+                        <p class="text-muted small mb-0">Representasi visual bagaimana ingatan memudar dan membentuk pola baru yang tak terduga.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x400/888888/ffffff?text=Lansekap+Monokrom" class="card-img-top" height="300" alt="Lansekap Monokrom">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-1">Lansekap Monokrom</h5>
+                        <p class="text-muted small mb-0">Pemandangan imajiner yang dibangun dari lapisan-lapisan kabut dan keheningan digital.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-art shadow-sm h-100">
+                    <img src="https://via.placeholder.com/400x400/0a0a0a/ffffff?text=Ritme+Sunyi" class="card-img-top" height="300" alt="Ritme Sunyi">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-1">Ritme Sunyi</h5>
+                        <p class="text-muted small mb-0">Visualisasi dari interval waktu yang kosong di antara detak jam dinding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="container my-5 opacity-25">
+
+    <div class="container px-4 mb-5" style="max-width: 960px;">
+        <h1 class="fw-bold mb-2">Unggah Karya</h1>
+        <p class="text-muted mb-4">Presentasikan mahakarya Anda di dalam galeri digital kami. Gunakan area di bawah untuk memulai kurasi digital Anda.</p>
+
+        <div class="upload-drag-area rounded mb-5 bg-white shadow-sm">
+            <div class="py-4">
+                <i class="bi bi-box-arrow-up fs-1 text-muted mb-3 d-block"></i>
+                <h5 class="fw-bold mb-1">Seret dan lepas file di sini</h5>
+                <p class="text-muted small mb-3">PNG, JPEG, atau WebP (Maks. 20MB)</p>
+                <button class="btn btn-primary-custom px-4 py-2 text-uppercase fs-6">Pilih File</button>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-7">
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-muted small text-uppercase tracking-wider">Judul Karya</label>
+                    <input type="text" class="form-control bg-transparent border-0 border-bottom rounded-0 px-0 pb-2 border-secondary-subtle" placeholder="Berikan nama untuk karya Anda...">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-muted small text-uppercase tracking-wider">Deskripsi</label>
+                    <textarea class="form-control border-0 rounded bg-white shadow-sm p-3 text-muted" rows="4" placeholder="Ceritakan narasi di balik mahakarya ini..."></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-muted small text-uppercase tracking-wider">Kategori</label>
+                    <select class="form-select bg-white border-0 shadow-sm py-2 text-muted">
+                        <option selected>Pilih kategori...</option>
+                        <option value="digital">Digital</option>
+                        <option value="lukisan">Lukisan</option>
+                        <option value="fotografi">Fotografi</option>
+                        <option value="instalasi">Instalasi</option>
+                    </select>
+                </div>
+
+                <div class="card border-0 bg-secondary-subtle bg-opacity-50 p-3 rounded">
+                    <div class="d-flex gap-2 align-items-start text-dark">
+                        <i class="bi bi-info-circle-fill fs-6 mt-1 text-secondary"></i>
+                        <div>
+                            <h6 class="fw-bold mb-2 text-uppercase" style="font-size: 0.8rem; letter-spacing: 0.5px;">Panduan Kurasi</h6>
+                            <ul class="small text-muted ps-3 mb-0" style="list-style-type: disc;">
+                                <li class="mb-2">Gunakan gambar resolusi tinggi untuk hasil terbaik.</li>
+                                <li>Deskripsi yang mendalam meningkatkan visibilitas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-3 mt-5 pt-4 border-top border-secondary-subtle border-opacity-25">
+            <button class="btn btn-outline-secondary px-4 py-2 text-uppercase text-dark" style="font-size: 0.85rem; font-weight: 500;">Batalkan</button>
+            <button class="btn btn-primary-custom px-4 py-2 text-uppercase" style="font-size: 0.85rem; font-weight: 500;">Unggah</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

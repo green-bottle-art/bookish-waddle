@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengaturan Profil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-VmY5+5KkYTL2uTeBlcBwQjKV5b7+ipeQ0d10JYOTNEkZlJ60ZLi0ijGx1p5gXInV" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Pengaturan Profil</a>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h1 class="h4 mb-4">Edit Profil</h1>
+              <form>
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" placeholder="Masukkan username" value="user123">
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Sandi</label>
+                  <input type="password" class="form-control" id="password" placeholder="Masukkan sandi baru">
+                  <div class="form-text">Gunakan setidaknya 8 karakter.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Tautan Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="nama@domain.com" value="nama@domain.com">
+                </div>
+
+                <div class="mb-3">
+                  <label for="bio" class="form-label">Data Diri / Bio</label>
+                  <textarea class="form-control" id="bio" rows="4" placeholder="Tulis bio singkat tentang diri Anda..."></textarea>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label">Foto Profil</label>
+                  <div class="mb-3 d-flex align-items-center">
+                    <img src="https://via.placeholder.com/80" alt="Foto Profil" class="rounded-circle me-3" width="80" height="80">
+                    <div>
+                      <label for="profilePicture" class="btn btn-outline-secondary btn-sm mb-0">Unggah Foto</label>
+                      <input class="form-control d-none" type="file" id="profilePicture" accept="image/*">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                  <button type="button" class="btn btn-secondary">Batalkan</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Tp422dKsQrpIkPks4Wl4+S2BCXXjwvg9bl+z5zB0+RZfXtYk9XvM5TBJE4bFk66H" crossorigin="anonymous"></script>
+  </body>
+</html>
